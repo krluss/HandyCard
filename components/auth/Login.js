@@ -1,30 +1,29 @@
 import React, { Component } from 'react'
 import { View, TextInput, StyleSheet, Text, TouchableOpacity } from 'react-native'
-
 import firebase from 'firebase/app'
 
 
 export class Login extends Component {
-    constructor(props){
+    constructor(props) {
         super(props);
 
         this.state = {
-            email : '',
-            password : '',
+            email: '',
+            password: '',
 
         }
         this.onSignUp = this.onSignUp.bind(this)
     }
 
-    onSignUp(){
+    onSignUp() {
         const { email, password } = this.state;
         firebase.auth().signInWithEmailAndPassword(email, password)
-        .then((result) => {
-            console.log(result)
-        })
-        .catch((error) =>{
-            console.log(error)
-        })
+            .then((result) => {
+                console.log(result)
+            })
+            .catch((error) => {
+                console.log(error)
+            })
     }
 
     render() {
@@ -36,15 +35,15 @@ export class Login extends Component {
                 />
                 <TextInput style={styles.input}
                     placeholder="Password"
-                    secureTextEntry = {true}
+                    secureTextEntry={true}
                     onChangeText={(password) => this.setState({ password })}
                 />
                 <TouchableOpacity style={styles.button}
                     onPress={() => this.onSignUp()}
                     title="Login"
                 >
-                    <Text style={{color: 'white', fontSize: 15, fontWeight: 'bold'}}>Login</Text>
-                    </TouchableOpacity>
+                    <Text style={{ color: 'white', fontSize: 15, fontWeight: 'bold' }}>Login</Text>
+                </TouchableOpacity>
             </View>
         )
     }
@@ -66,10 +65,10 @@ const styles = StyleSheet.create({
         width: 288,
         backgroundColor: 'white',
         paddingLeft: 6,
-        
+
     },
     button: {
-        backgroundColor:'#F9AA33',
+        backgroundColor: '#F9AA33',
         width: 288,
         height: 40,
         padding: 10,

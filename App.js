@@ -30,6 +30,8 @@ import LandingScreen from './components/auth/Landing'
 import RegisterScreen from './components/auth/Register'
 import LoginScreen from './components/auth/Login'
 import MainScreen from './components/Main'
+import CardDetails from './components/main/CardDetails'
+
 
 const Stack = createStackNavigator();
 
@@ -85,6 +87,7 @@ export class App extends Component {
         <NavigationContainer>
           <Stack.Navigator initialRouteName="HandyCard">
             <Stack.Screen name="HandyCard" component={MainScreen} options={{ headerTintColor: '#F9AA33', headerStyle: { backgroundColor: '#232F34' } }} />
+            <Stack.Screen name="CardDetails" component={CardDetails} options={{ headerTintColor: '#F9AA33', headerStyle: { backgroundColor: '#232F34' } }} />
           </Stack.Navigator>
         </NavigationContainer>
       </Provider>

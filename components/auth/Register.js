@@ -1,11 +1,8 @@
 import React, { Component } from 'react'
 import { View, TextInput, StyleSheet, TouchableOpacity, Text } from 'react-native'
 
-
-
-import firebase from 'firebase/app'
-
-
+import firebase from 'firebase'
+import 'firebase/firestore'
 
 export class Register extends Component {
     constructor(props) {
@@ -42,7 +39,7 @@ export class Register extends Component {
                 <TextInput style={styles.input}
                     placeholder="Name"
                     onChangeText={(name) => this.setState({ name })}
-                    
+
                 />
                 <TextInput style={styles.input}
                     placeholder="Email"
@@ -57,10 +54,10 @@ export class Register extends Component {
                     onPress={() => this.onSignUp()}
                     title="Register"
                     color='#F9AA33'
-                    
+
                 >
-                    <Text style={{color: 'white', fontSize: 15, fontWeight: 'bold'}}>Register</Text>
-                    </TouchableOpacity>
+                    <Text style={{ color: 'white', fontSize: 15, fontWeight: 'bold' }}>Register</Text>
+                </TouchableOpacity>
             </View>
         )
     }
@@ -83,10 +80,10 @@ const styles = StyleSheet.create({
         width: 288,
         backgroundColor: 'white',
         paddingLeft: 6,
-        
+
     },
     button: {
-        backgroundColor:'#F9AA33',
+        backgroundColor: '#F9AA33',
         width: 288,
         height: 40,
         padding: 10,

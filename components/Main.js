@@ -19,34 +19,34 @@ export class Main extends Component {
     render() {
         return (
             <Tab.Navigator
-            tabBarOptions={{
-                activeTintColor: '#F9AA33',
-                activeBackgroundColor: '#232F34',
-                inactiveBackgroundColor: '#232F34',
-            }}
+                tabBarOptions={{
+                    activeTintColor: '#F9AA33',
+                    activeBackgroundColor: '#232F34',
+                    inactiveBackgroundColor: '#232F34',
+                }}
             >
                 <Tab.Screen
-                name="Cards"
-                component={CardsScreen}
-                options={{
-                    tabBarLabel: 'Cards',
-                    tabBarIcon: ({ color, size }) => (
-                        <MaterialCommunityIcons name="credit-card" color={color} size={size} />
-                    ),
-                }}
-            />
-            <Tab.Screen
-                name="Settings"
-                component={SettingsScreen}
-                options={{
-                    tabBarLabel: 'Settings',
-                    tabBarIcon: ({ color, size }) => (
-                        <MaterialCommunityIcons name="cog-outline" color={color} size={size} />
-                    ),
-                }}
-            />
+                    name="Cards"
+                    component={CardsScreen}
+                    options={{
+                        tabBarLabel: 'Cards',
+                        tabBarIcon: ({ color, size }) => (
+                            <MaterialCommunityIcons name="credit-card" color={color} size={size} />
+                        ),
+                    }}
+                />
+                <Tab.Screen
+                    name="Settings"
+                    component={SettingsScreen}
+                    options={{
+                        tabBarLabel: 'Settings',
+                        tabBarIcon: ({ color, size }) => (
+                            <MaterialCommunityIcons name="cog-outline" color={color} size={size} />
+                        ),
+                    }}
+                />
             </Tab.Navigator>
-            
+
         )
     }
 }
