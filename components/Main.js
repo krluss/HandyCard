@@ -5,7 +5,7 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import { fetchUser } from '../redux/actions/index'
+import { fetchUser, fetchUserCards } from '../redux/actions/index'
 
 import CardsScreen from './main/Cards'
 import SettingsScreen from './main/Settings'
@@ -15,6 +15,7 @@ const Tab = createBottomTabNavigator()
 export class Main extends Component {
     componentDidMount() {
         this.props.fetchUser()
+        this.props.fetchUserCards()
     }
     render() {
         return (
@@ -54,6 +55,6 @@ export class Main extends Component {
 const mapStateToProps = (store) => ({
     currentUser: store.userState.currentUser
 })
-const mapDispatchProps = (dispatch) => bindActionCreators({ fetchUser }, dispatch)
+const mapDispatchProps = (dispatch) => bindActionCreators({ fetchUser, fetchUserCards }, dispatch)
 
 export default connect(mapStateToProps, mapDispatchProps)(Main)

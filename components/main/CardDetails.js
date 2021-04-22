@@ -3,16 +3,15 @@ import { View, Text } from 'react-native'
 import Barcode from 'react-native-barcode-svg'
 
 
-
 export default function CardDetails({ route }) {
-    const { brand, barcode } = route.params
+    const { brandName, cardNumber } = route.params
     return (
         <View>
-            <Text>{brand}</Text>
+            <Text>{brandName}</Text>
             <Barcode
-            value={barcode}
+            value={cardNumber}
             />
-            <Text>{barcode}</Text>
+            <Text>{cardNumber}</Text>
         </View>
     )
 }

@@ -1,29 +1,25 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { View, Text, StyleSheet, Button, FlatList, TouchableOpacity } from 'react-native'
 import Card from './Card'
+import { connect } from 'react-redux'
 
-export default function Cards({ navigation }) {
-
-    const [card, setCard] = useState([
-        { brand: 'Biedronka', barcode: '1231231235412', key: '1' },
-        { brand: 'CCC', barcode: '1231231235412', key: '2' },
-        { brand: 'Rossmann', barcode: '1231231235412', key: '3' },
-    ])
-
+function Cards(props) {
+    const { cards } = props
     return (
         <View style={styles.bg}>
             <FlatList
-                data={card}
+                data={cards}
                 renderItem={({ item }) => (
-                    <TouchableOpacity onPress={() => navigation.navigate('CardDetails', item)}>
+                    <TouchableOpacity onPress={() => props.navigation.navigate('CardDetails', item)}>
                         <Card>
-                            <Text>{item.brand}</Text>
+                            <Text>{item.brandName}</Text>
                         </Card>
                     </TouchableOpacity>
                 )}
             />
             <Button
                 title='Add card'
+                onPress={() => props.navigation.navigate('AddCard')}
             />
         </View>
     )
@@ -44,3 +40,10 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     }
 })
+
+const mapStateToProps = (store) => ({
+    currentUser: store.userState.currentUser,
+    cards: store.userState.cards
+})
+
+export default connect(mapStateToProps, null)(Cards)

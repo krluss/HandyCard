@@ -31,6 +31,8 @@ import RegisterScreen from './components/auth/Register'
 import LoginScreen from './components/auth/Login'
 import MainScreen from './components/Main'
 import CardDetails from './components/main/CardDetails'
+import AddCard from './components/main/AddCard'
+import SaveCard from './components/main/SaveCard'
 
 
 const Stack = createStackNavigator();
@@ -75,8 +77,8 @@ export class App extends Component {
         <NavigationContainer>
           <Stack.Navigator initialRouteName="HandyCard">
             <Stack.Screen name="HandyCard" component={LandingScreen} options={{ headerTintColor: '#F9AA33', headerStyle: { backgroundColor: '#232F34' } }} />
-            <Stack.Screen name="Registration" component={RegisterScreen} options={{ headerTintColor: '#F9AA33', headerStyle: { backgroundColor: '#232F34' } }} />
-            <Stack.Screen name="Login" component={LoginScreen} options={{ headerTintColor: '#F9AA33', headerStyle: { backgroundColor: '#232F34' } }} />
+            <Stack.Screen name="Registration" component={RegisterScreen}  options={{ headerTintColor: '#F9AA33', headerStyle: { backgroundColor: '#232F34' } }} />
+            <Stack.Screen name="Login" component={LoginScreen}  options={{ headerTintColor: '#F9AA33', headerStyle: { backgroundColor: '#232F34' } }} />
           </Stack.Navigator>
         </NavigationContainer>
       );
@@ -87,7 +89,9 @@ export class App extends Component {
         <NavigationContainer>
           <Stack.Navigator initialRouteName="HandyCard">
             <Stack.Screen name="HandyCard" component={MainScreen} options={{ headerTintColor: '#F9AA33', headerStyle: { backgroundColor: '#232F34' } }} />
-            <Stack.Screen name="CardDetails" component={CardDetails} options={{ headerTintColor: '#F9AA33', headerStyle: { backgroundColor: '#232F34' } }} />
+            <Stack.Screen name="CardDetails" component={CardDetails} navigation={this.props.navigation} options={{ headerTintColor: '#F9AA33', headerStyle: { backgroundColor: '#232F34' } }} />
+            <Stack.Screen name="AddCard" component={AddCard} navigation={this.props.navigation} options={{ headerTintColor: '#F9AA33', headerStyle: { backgroundColor: '#232F34' } }} />
+            <Stack.Screen name="SaveCard" component={SaveCard} navigation={this.props.navigation} options={{ headerTintColor: '#F9AA33', headerStyle: { backgroundColor: '#232F34' } }} />
           </Stack.Navigator>
         </NavigationContainer>
       </Provider>
