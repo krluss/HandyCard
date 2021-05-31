@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from 'react';
-import { Text, View, StyleSheet, Button } from 'react-native';
+import {
+    Text, View, StyleSheet, Button,
+} from 'react-native';
 import { BarCodeScanner } from 'expo-barcode-scanner';
-import {  useDispatch } from 'react-redux'
-import { setCardNumber } from '../../redux/actions/index'
+import { useDispatch } from 'react-redux';
+import { setCardNumber } from '../../../redux/actions/index';
+import styles from './styles';
 
 export default function AddCard({ navigation }) {
     const [hasPermission, setHasPermission] = useState(null);
     const [scanned, setScanned] = useState(false);
-    const [card, setCard] = useState(false);
-    const dispatch = useDispatch()
+    const dispatch = useDispatch();
 
     useEffect(() => {
         (async () => {
@@ -16,10 +18,10 @@ export default function AddCard({ navigation }) {
             setHasPermission(status === 'granted');
         })();
     }, []);
-    
+
     const handleBarCodeScanned = ({ data }) => {
         setScanned(true);
-        dispatch(setCardNumber(data))
+        dispatch(setCardNumber(data));
     };
 
     if (hasPermission === null) {
@@ -42,20 +44,3 @@ export default function AddCard({ navigation }) {
         </View>
     );
 }
-
-const styles = StyleSheet.create({
-    scannerContainer: {
-        flex: 1,
-        flexDirection: 'column',
-        justifyContent: 'center',
-    },
-    text: {
-        color: '#fff',
-        fontSize: 34,
-        marginLeft: 40,
-        width: 320,
-        borderBottomWidth: 1,
-        borderBottomColor: 'red',
-    },
-
-});
