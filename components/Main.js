@@ -1,59 +1,52 @@
-import React, { Component } from 'react';
+/* eslint-disable react/display-name */
+import React, { useEffect } from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import { fetchUser, fetchUserCards } from '../redux/actions/index';
+import { useDispatch } from 'react-redux';
+
+import { fetchUserCards } from '../redux/actions/index';
 
 import CardsScreen from './main/Cards/Cards';
 import SettingsScreen from './main/Settings/Settings';
 
 const Tab = createBottomTabNavigator();
 
-export class Main extends Component {
-    componentDidMount() {
-        this.props.fetchUser();
-        this.props.fetchUserCards();
-    }
+export default function Main() {
+    const dispatch = useDispatch();
 
-    render() {
-        return (
-            <Tab.Navigator
-                tabBarOptions={{
-                    activeTintColor: '#F9AA33',
-                    activeBackgroundColor: '#232F34',
-                    inactiveBackgroundColor: '#232F34',
+    useEffect(() => {
+        dispatch(fetchUserCards());
+    });
+
+    return (
+        <Tab.Navigator
+            tabBarOptions={{
+                activeTintColor: '#F9AA33',
+                activeBackgroundColor: '#232F34',
+                inactiveBackgroundColor: '#232F34',
+            }}
+        >
+            <Tab.Screen
+                name="Cards"
+                component={CardsScreen}
+                options={{
+                    tabBarLabel: 'Cards',
+                    tabBarIcon: ({ color, size }) => (
+                        <MaterialCommunityIcons name="credit-card" color={color} size={size} />
+                    ),
                 }}
-            >
-                <Tab.Screen
-                    name="Cards"
-                    component={CardsScreen}
-                    options={{
-                        tabBarLabel: 'Cards',
-                        tabBarIcon: ({ color, size }) => (
-                            <MaterialCommunityIcons name="credit-card" color={color} size={size} />
-                        ),
-                    }}
-                />
-                <Tab.Screen
-                    name="Settings"
-                    component={SettingsScreen}
-                    options={{
-                        tabBarLabel: 'Settings',
-                        tabBarIcon: ({ color, size }) => (
-                            <MaterialCommunityIcons name="cog-outline" color={color} size={size} />
-                        ),
-                    }}
-                />
-            </Tab.Navigator>
-        );
-    }
+            />
+            <Tab.Screen
+                name="Settings"
+                component={SettingsScreen}
+                options={{
+                    tabBarLabel: 'Settings',
+                    tabBarIcon: ({ color, size }) => (
+                        <MaterialCommunityIcons name="cog-outline" color={color} size={size} />
+                    ),
+                }}
+            />
+        </Tab.Navigator>
+    );
 }
-
-const mapStateToProps = (store) => ({
-    currentUser: store.userState.currentUser,
-});
-const mapDispatchProps = (dispatch) => bindActionCreators({ fetchUser, fetchUserCards }, dispatch);
-
-export default connect(mapStateToProps, mapDispatchProps)(Main);

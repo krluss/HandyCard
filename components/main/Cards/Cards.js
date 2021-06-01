@@ -2,12 +2,14 @@ import React from 'react';
 import {
     View, Text, Button, FlatList, TouchableOpacity,
 } from 'react-native';
-import { connect } from 'react-redux';
+import { useSelector } from 'react-redux';
+
 import Card from '../Card/Card';
 import styles from './styles';
 
-function Cards(props) {
-    const { cards } = props;
+export default function Cards(props) {
+    const cards = useSelector((state) => state.userState.cards);
+
     return (
         <View style={styles.bg}>
             <FlatList
@@ -27,10 +29,3 @@ function Cards(props) {
         </View>
     );
 }
-
-const mapStateToProps = (store) => ({
-    currentUser: store.userState.currentUser,
-    cards: store.userState.cards,
-});
-
-export default connect(mapStateToProps, null)(Cards);
