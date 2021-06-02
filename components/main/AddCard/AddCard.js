@@ -7,8 +7,8 @@ import { useDispatch } from 'react-redux';
 import { setCardNumber } from '../../../redux/actions/index';
 import styles from './styles';
 
-export default function AddCard({ navigation }) {
-    const [hasPermission, setHasPermission] = useState(null);
+const AddCard = ({ navigation }) => {
+    const [hasPermission, setHasPermission] = useState(false);
     const [scanned, setScanned] = useState(false);
     const dispatch = useDispatch();
 
@@ -24,9 +24,6 @@ export default function AddCard({ navigation }) {
         dispatch(setCardNumber(data));
     };
 
-    if (hasPermission === null) {
-        return <Text>Requesting for camera permission</Text>;
-    }
     if (hasPermission === false) {
         return <Text>No access to camera</Text>;
     }
@@ -43,4 +40,6 @@ export default function AddCard({ navigation }) {
 
         </View>
     );
-}
+};
+
+export default AddCard;

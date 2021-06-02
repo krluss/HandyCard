@@ -5,7 +5,7 @@ import {
 } from 'react-native';
 import styles from './styles';
 
-export default function Settings() {
+const Settings = () => {
     const onLogout = () => {
         firebase.auth().signOut();
     };
@@ -21,4 +21,6 @@ export default function Settings() {
             </View>
         </View>
     );
-}
+};
+
+export default Settings;

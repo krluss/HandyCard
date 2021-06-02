@@ -5,18 +5,19 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 
 import { useDispatch } from 'react-redux';
 
-import { fetchUserCards } from '../redux/actions/index';
+import { fetchUser, fetchUserCards } from '../redux/actions/index';
 
 import CardsScreen from './main/Cards/Cards';
 import SettingsScreen from './main/Settings/Settings';
 
 const Tab = createBottomTabNavigator();
 
-export default function Main() {
+const Main = () => {
     const dispatch = useDispatch();
 
     useEffect(() => {
         dispatch(fetchUserCards());
+        dispatch(fetchUser());
     });
 
     return (
@@ -49,4 +50,6 @@ export default function Main() {
             />
         </Tab.Navigator>
     );
-}
+};
+
+export default Main;

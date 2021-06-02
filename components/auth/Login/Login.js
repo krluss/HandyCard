@@ -6,7 +6,7 @@ import {
 import firebase from 'firebase/app';
 import styles from './style';
 
-export default function Login() {
+const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const setEmailOfUser = (userName) => setEmail(userName);
@@ -46,4 +46,6 @@ export default function Login() {
             </TouchableOpacity>
         </View>
     );
-}
+};
+
+export default Login;

@@ -11,7 +11,7 @@ import styles from './styles';
 
 require('firebase/firestore');
 
-export default function CardDetails(props) {
+const CardDetails = (props) => {
     const { brandName, cardNumber, id } = props.route.params;
 
     const dispatch = useDispatch();
@@ -64,4 +64,6 @@ export default function CardDetails(props) {
             />
         </View>
     );
-}
+};
+
+export default CardDetails;

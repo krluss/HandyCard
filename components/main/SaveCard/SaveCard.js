@@ -9,7 +9,7 @@ import styles from './styles';
 
 require('firebase/firestore');
 
-function SaveCard(props) {
+const SaveCard = (props) => {
     const [brandName, setBrandName] = useState('');
     const dispatch = useDispatch();
     const cardNumber = useSelector((state) => state.userState.cardNumber);
@@ -56,6 +56,6 @@ function SaveCard(props) {
             />
         </View>
     );
-}
+};
 
 export default SaveCard;

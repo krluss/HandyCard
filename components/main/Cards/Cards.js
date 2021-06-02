@@ -7,7 +7,7 @@ import { useSelector } from 'react-redux';
 import Card from '../Card/Card';
 import styles from './styles';
 
-export default function Cards(props) {
+const Cards = (props) => {
     const cards = useSelector((state) => state.userState.cards);
 
     return (
@@ -28,4 +28,6 @@ export default function Cards(props) {
             />
         </View>
     );
-}
+};
+
+export default Cards;

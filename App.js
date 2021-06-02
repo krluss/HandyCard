@@ -33,7 +33,7 @@ if (firebase.apps.length === 0) {
 
 const Stack = createStackNavigator();
 
-export default function App() {
+const App = () => {
     const [isLoaded, setLoaded] = useState(false);
     const [isLogged, setLogged] = useState(false);
 
@@ -83,4 +83,6 @@ export default function App() {
             </NavigationContainer>
         </Provider>
     );
-}
+};
+
+export default App;
