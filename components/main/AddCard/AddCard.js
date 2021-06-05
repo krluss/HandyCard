@@ -4,7 +4,7 @@ import {
 } from 'react-native';
 import { BarCodeScanner } from 'expo-barcode-scanner';
 import { useDispatch } from 'react-redux';
-import { setCardNumber } from '../../../redux/actions/index';
+import { setCardNumber } from '../../../redux/actions';
 import styles from './styles';
 
 const AddCard = ({ navigation }) => {

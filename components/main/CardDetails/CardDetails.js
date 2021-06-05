@@ -51,16 +51,16 @@ const CardDetails = (props) => {
 
     return (
         <View style={styles.bg}>
-            <Text>{brandName}</Text>
-            <Barcode
-                value={cardNumber}
-            />
-            <Text>{cardNumber}</Text>
+            <Text style={styles.text}>{brandName}</Text>
+            <View style={styles.barcodeBg}>
+                <Barcode
+                    value={cardNumber}
+                />
+            </View>
+            <Text style={styles.text}>{cardNumber}</Text>
             <Button
                 title='Delete Card'
-                onPress={() => {
-                    createAlert();
-                }}
+                onPress={createAlert}
             />
         </View>
     );

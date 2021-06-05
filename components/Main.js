@@ -16,9 +16,9 @@ const Main = () => {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch(fetchUserCards());
         dispatch(fetchUser());
-    });
+        dispatch(fetchUserCards());
+    }, []);
 
     return (
         <Tab.Navigator

@@ -4,7 +4,7 @@ import {
 } from 'react-native';
 import firebase from 'firebase';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchUserCards } from '../../../redux/actions/index';
+import { fetchUserCards } from '../../../redux/actions';
 import styles from './styles';
 
 require('firebase/firestore');
@@ -13,7 +13,6 @@ const SaveCard = (props) => {
     const [brandName, setBrandName] = useState('');
     const dispatch = useDispatch();
     const cardNumber = useSelector((state) => state.userState.cardNumber);
-    const setNumberOfCard = () => (cardNumber);
     const setNameOfBrand = (cardName) => setBrandName(cardName);
 
     const saveCardData = () => {
@@ -27,9 +26,10 @@ const SaveCard = (props) => {
             })
             .then((() => {
                 props.navigation.popToTop();
-                setNumberOfCard('');
             }));
     };
+
+    const saveCardHandler = () => { saveCardData(); dispatch(fetchUserCards()); };
 
     return (
         <View>
@@ -41,18 +41,12 @@ const SaveCard = (props) => {
             />
             <TextInput style={styles.input}
                 placeholder='Card Number'
-                onChangeText={
-                    setNumberOfCard
-                }
                 value={cardNumber}
                 keyboardType='numeric'
             />
             <Button
                 title='Save Card'
-                onPress={() => {
-                    saveCardData();
-                    dispatch(fetchUserCards());
-                }}
+                onPress={saveCardHandler}
             />
         </View>
     );
