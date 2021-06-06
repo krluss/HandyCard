@@ -26,26 +26,27 @@ const App = () => {
             }
         });
     }, []);
+
     if (!isLoaded) {
         return (
-            <View style={
-                {
-                    flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: '#344955',
-                }}>
+            <View
+                style={{
+                    flex: 1,
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    backgroundColor: '#344955',
+                }}
+            >
                 <Text style={{ color: '#F9AA33', fontSize: 25 }}>Loading</Text>
             </View>
         );
     }
 
     if (!isLogged) {
-        return (
-            AuthContainer()
-        );
+        return AuthContainer();
     }
 
-    return (
-        MainCointainer()
-    );
+    return MainCointainer();
 };
 
 export default App;

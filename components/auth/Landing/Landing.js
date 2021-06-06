@@ -7,13 +7,14 @@ const Landing = ({ navigation }) => (
         <Button
             title="Register"
             onPress={() => navigation.navigate('Registration')}
-            color='#F9AA33' />
-        <View style={styles.hr}>
-        </View>
+            color="#F9AA33"
+        />
+        <View style={styles.hr}></View>
         <Button
             title="Login"
             onPress={() => navigation.navigate('Login')}
-            color='#F9AA33' />
+            color="#F9AA33"
+        />
     </View>
 );
 

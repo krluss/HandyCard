@@ -21,26 +21,38 @@ const mainCointainer = () => (
     <Provider store={store}>
         <NavigationContainer>
             <Stack.Navigator initialRouteName={routeNames.handyCard}>
-                <Stack.Screen name={routeNames.handyCard} component={MainScreen}
+                <Stack.Screen
+                    name={routeNames.handyCard}
+                    component={MainScreen}
                     options={{
                         headerTintColor: styleConst.tintColor,
                         headerStyle: { backgroundColor: styleConst.bgColor },
-                    }} />
-                <Stack.Screen name={routeNames.cardDetails} component={CardDetails}
+                    }}
+                />
+                <Stack.Screen
+                    name={routeNames.cardDetails}
+                    component={CardDetails}
                     options={{
                         headerTintColor: styleConst.tintColor,
                         headerStyle: { backgroundColor: styleConst.bgColor },
-                    }} />
-                <Stack.Screen name={routeNames.addCard} component={AddCard}
+                    }}
+                />
+                <Stack.Screen
+                    name={routeNames.addCard}
+                    component={AddCard}
                     options={{
                         headerTintColor: styleConst.tintColor,
                         headerStyle: { backgroundColor: styleConst.bgColor },
-                    }} />
-                <Stack.Screen name={routeNames.saveCard} component={SaveCard}
+                    }}
+                />
+                <Stack.Screen
+                    name={routeNames.saveCard}
+                    component={SaveCard}
                     options={{
                         headerTintColor: styleConst.tintColor,
                         headerStyle: { backgroundColor: styleConst.bgColor },
-                    }} />
+                    }}
+                />
             </Stack.Navigator>
         </NavigationContainer>
     </Provider>

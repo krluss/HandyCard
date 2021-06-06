@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import {
-    Text, View, StyleSheet, Button,
-} from 'react-native';
+import { Text, View, StyleSheet, Button } from 'react-native';
 import { BarCodeScanner } from 'expo-barcode-scanner';
 import { useDispatch } from 'react-redux';
 import { setCardNumber } from '../../../redux/actions';
@@ -30,14 +28,17 @@ const AddCard = ({ navigation }) => {
 
     return (
         <View style={styles.scannerContainer}>
-
             <BarCodeScanner
                 onBarCodeScanned={scanned ? undefined : handleBarCodeScanned}
                 style={StyleSheet.absoluteFillObject}
             />
-            {scanned && <Button title={'Next'} onPress={() => navigation.navigate('SaveCard')} />}
+            {scanned && (
+                <Button
+                    title={'Next'}
+                    onPress={() => navigation.navigate('SaveCard')}
+                />
+            )}
             {!scanned && <Text style={styles.text}>Scan your card number</Text>}
-
         </View>
     );
 };

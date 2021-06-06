@@ -18,7 +18,7 @@ const Main = () => {
     useEffect(() => {
         dispatch(fetchUser());
         dispatch(fetchUserCards());
-    }, []);
+    }, [fetchUser(), fetchUserCards()]);
 
     return (
         <Tab.Navigator
@@ -34,7 +34,11 @@ const Main = () => {
                 options={{
                     tabBarLabel: 'Cards',
                     tabBarIcon: ({ color, size }) => (
-                        <MaterialCommunityIcons name="credit-card" color={color} size={size} />
+                        <MaterialCommunityIcons
+                            name="credit-card"
+                            color={color}
+                            size={size}
+                        />
                     ),
                 }}
             />
@@ -44,7 +48,11 @@ const Main = () => {
                 options={{
                     tabBarLabel: 'Settings',
                     tabBarIcon: ({ color, size }) => (
-                        <MaterialCommunityIcons name="cog-outline" color={color} size={size} />
+                        <MaterialCommunityIcons
+                            name="cog-outline"
+                            color={color}
+                            size={size}
+                        />
                     ),
                 }}
             />

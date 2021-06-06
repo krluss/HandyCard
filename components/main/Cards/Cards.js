@@ -1,7 +1,5 @@
 import React from 'react';
-import {
-    View, Text, Button, FlatList, TouchableOpacity,
-} from 'react-native';
+import { View, Text, Button, FlatList, TouchableOpacity } from 'react-native';
 import { useSelector } from 'react-redux';
 
 import Card from '../Card/Card';
@@ -15,7 +13,9 @@ const Cards = (props) => {
             <FlatList
                 data={cards}
                 renderItem={({ item }) => (
-                    <TouchableOpacity onPress={() => props.navigation.navigate('CardDetails', item)}>
+                    <TouchableOpacity
+                        onPress={() => props.navigation.navigate('CardDetails', item)}
+                    >
                         <Card>
                             <Text>{item.brandName}</Text>
                         </Card>
@@ -23,7 +23,7 @@ const Cards = (props) => {
                 )}
             />
             <Button
-                title='Add card'
+                title="Add card"
                 onPress={() => props.navigation.navigate('AddCard')}
             />
         </View>

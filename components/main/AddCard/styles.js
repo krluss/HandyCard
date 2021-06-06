@@ -1,6 +1,4 @@
-import {
-    StyleSheet,
-} from 'react-native';
+import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
     scannerContainer: {
@@ -16,7 +14,6 @@ const styles = StyleSheet.create({
         borderBottomWidth: 1,
         borderBottomColor: 'red',
     },
-
 });
 
 export default styles;

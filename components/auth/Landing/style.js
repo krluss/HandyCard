@@ -9,7 +9,6 @@ const styles = StyleSheet.create({
     hr: {
         margin: 2,
     },
-
 });
 
 export default styles;

@@ -1,13 +1,9 @@
 import React, { useState } from 'react';
-import {
-    View, TextInput, Button,
-} from 'react-native';
-import firebase from 'firebase';
+import { View, TextInput, Button } from 'react-native';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchUserCards } from '../../../redux/actions';
 import styles from './styles';
-
-require('firebase/firestore');
+import { saveCardData } from '../../firebaseController';
 
 const SaveCard = (props) => {
     const [brandName, setBrandName] = useState('');
@@ -15,39 +11,25 @@ const SaveCard = (props) => {
     const cardNumber = useSelector((state) => state.userState.cardNumber);
     const setNameOfBrand = (cardName) => setBrandName(cardName);
 
-    const saveCardData = () => {
-        firebase.firestore()
-            .collection('cards')
-            .doc(firebase.auth().currentUser.uid)
-            .collection('userCards')
-            .add({
-                brandName,
-                cardNumber,
-            })
-            .then((() => {
-                props.navigation.popToTop();
-            }));
+    const saveCardHandler = () => {
+        saveCardData(brandName, cardNumber, props);
+        dispatch(fetchUserCards());
     };
-
-    const saveCardHandler = () => { saveCardData(); dispatch(fetchUserCards()); };
 
     return (
         <View>
-            <TextInput style={styles.input}
-                placeholder='Brand'
-                onChangeText={
-                    setNameOfBrand
-                }
+            <TextInput
+                style={styles.input}
+                placeholder="Brand"
+                onChangeText={setNameOfBrand}
             />
-            <TextInput style={styles.input}
-                placeholder='Card Number'
+            <TextInput
+                style={styles.input}
+                placeholder="Card Number"
                 value={cardNumber}
-                keyboardType='numeric'
+                keyboardType="numeric"
             />
-            <Button
-                title='Save Card'
-                onPress={saveCardHandler}
-            />
+            <Button title="Save Card" onPress={saveCardHandler} />
         </View>
     );
 };

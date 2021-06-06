@@ -13,7 +13,6 @@ const styles = StyleSheet.create({
         width: 288,
         backgroundColor: 'white',
         paddingLeft: 6,
-
     },
     button: {
         backgroundColor: '#F9AA33',

@@ -4,9 +4,7 @@ import styles from './styles';
 
 const Card = (props) => (
     <View style={styles.card}>
-        <View style={styles.cardContent}>
-            {props.children}
-        </View>
+        <View style={styles.cardContent}>{props.children}</View>
     </View>
 );
 

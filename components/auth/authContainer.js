@@ -13,21 +13,30 @@ const Stack = createStackNavigator();
 const authContainer = () => (
     <NavigationContainer>
         <Stack.Navigator initialRouteName={routeNames.handyCard}>
-            <Stack.Screen name={routeNames.handyCard} component={LandingScreen}
+            <Stack.Screen
+                name={routeNames.handyCard}
+                component={LandingScreen}
                 options={{
                     headerTintColor: styleConst.tintColor,
                     headerStyle: { backgroundColor: styleConst.bgColor },
-                }} />
-            <Stack.Screen name={routeNames.registration} component={RegisterScreen}
+                }}
+            />
+            <Stack.Screen
+                name={routeNames.registration}
+                component={RegisterScreen}
                 options={{
                     headerTintColor: styleConst.tintColor,
                     headerStyle: { backgroundColor: styleConst.bgColor },
-                }} />
-            <Stack.Screen name={routeNames.login} component={LoginScreen}
+                }}
+            />
+            <Stack.Screen
+                name={routeNames.login}
+                component={LoginScreen}
                 options={{
                     headerTintColor: styleConst.tintColor,
                     headerStyle: { backgroundColor: styleConst.bgColor },
-                }} />
+                }}
+            />
         </Stack.Navigator>
     </NavigationContainer>
 );
