@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 
 import Card from '../Card/Card';
 import styles from './styles';
+import routeNames from '../../../utils/routeNamesEnum';
 
 const Cards = (props) => {
     const cards = useSelector((state) => state.userState.cards);
@@ -14,7 +15,7 @@ const Cards = (props) => {
                 data={cards}
                 renderItem={({ item }) => (
                     <TouchableOpacity
-                        onPress={() => props.navigation.navigate('CardDetails', item)}
+                        onPress={() => props.navigation.navigate(routeNames.cardDetails, item)}
                     >
                         <Card>
                             <Text>{item.brandName}</Text>
@@ -24,7 +25,7 @@ const Cards = (props) => {
             />
             <Button
                 title="Add card"
-                onPress={() => props.navigation.navigate('AddCard')}
+                onPress={() => props.navigation.navigate(routeNames.addCard)}
             />
         </View>
     );

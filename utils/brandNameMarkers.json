@@ -1,0 +1,305 @@
+{
+    "Shops": [
+        {
+            "properties":{
+                "SHOP_ID": 1,
+                "NAME": "Biedronka",
+                "ADDRESS": "Tadeusza Kościuszki 71",
+                "CITY": "Kraków",
+                "ZIPCODE": "30-14"
+            },
+            "geometry": {
+                "coordinates": [50.05271936066885, 19.91753748560246]
+            }
+        },
+        {
+            "properties":{
+                "SHOP_ID": 2,
+                "NAME": "Biedronka",
+                "ADDRESS": "Joselewicza 28",
+                "CITY": "Kraków",
+                "ZIPCODE": "31-031"
+            },
+            "geometry": {
+                "coordinates": [50.0552363650201, 19.94785429095246]
+            }
+        },
+        {
+            "properties":{
+                "SHOP_ID": 3,
+                "NAME": "Biedronka",
+                "ADDRESS": "Stefana Rogozińskiego 6",
+                "CITY": "Kraków",
+                "ZIPCODE": "31-559"
+
+            },
+            "geometry": {
+                "coordinates": [50.05790028900253, 19.963252552591925]
+            }
+        },
+        {
+            "properties":{
+                "SHOP_ID": 4,
+                "NAME": "Biedronka",
+                "ADDRESS": "Bolesława Limanowskiego 3",
+                "CITY": "Kraków",
+                "ZIPCODE": "30-551"
+            },
+            "geometry": {
+                "coordinates": [50.045150679931396, 19.95061992732188]
+            }
+        },
+        {
+            "properties":{
+                "SHOP_ID": 5,
+                "NAME": "Biedronka",
+                "ADDRESS": "Powstańców Wielkopolskich 18",
+                "CITY": "Kraków",
+                "ZIPCODE": "30-707"
+            },
+            "geometry": {
+                "coordinates": [50.04258605839195, 19.968991923266074]
+            }
+        },
+        {
+            "properties":{
+                "SHOP_ID": 6,
+                "NAME": "Lidl",
+                "ADDRESS": "Samuela Bogumiła Lindego 1C",
+                "CITY": "Kraków",
+                "ZIPCODE": "30-148"
+            },
+            "geometry": {
+                "coordinates": [50.07865962004497, 19.87904252433969]
+            }
+        },
+        {
+            "properties":{
+                "SHOP_ID": 7,
+                "NAME": "Lidl",
+                "ADDRESS": "Mogilska 116",
+                "CITY": "Kraków",
+                "ZIPCODE": "31-445"
+            },
+            "geometry": {
+                "coordinates": [50.067872662583376, 19.976907741507688]
+            }
+        },
+        {
+            "properties":{
+                "SHOP_ID": 8,
+                "NAME": "Lidl",
+                "ADDRESS": "Wielicka 67",
+                "CITY": "Kraków",
+                "ZIPCODE": "30-552"
+            },
+            "geometry": {
+                "coordinates": [50.034690835338886, 19.968348729168795]
+            }
+        },
+        {
+            "properties":{
+                "SHOP_ID": 9,
+                "NAME": "Lidl",
+                "ADDRESS": "Cegielniana 2",
+                "CITY": "Kraków",
+                "ZIPCODE": "30-404"
+            },
+            "geometry": {
+                "coordinates": [50.028749926327144, 19.935190253780753]
+            }
+        },
+        {
+            "properties":{
+                "SHOP_ID": 10,
+                "NAME": "Lidl",
+                "ADDRESS": "Kobierzyńska 106",
+                "CITY": "Kraków",
+                "ZIPCODE": "30-382"
+            },
+            "geometry": {
+                "coordinates": [50.025005554904844, 19.91269652362944]
+            }
+        },
+        {
+            "properties":{
+                "SHOP_ID": 11,
+                "NAME": "Rossmann",
+                "ADDRESS": "Wiślna 3",
+                "CITY": "Kraków",
+                "ZIPCODE": "31-007"
+            },
+            "geometry": {
+                "coordinates": [50.061038940721225, 19.935099348467674]
+            }
+        },
+        {
+            "properties":{
+                "SHOP_ID": 12,
+                "NAME": "Rossmann",
+                "ADDRESS": "Mikołajska 6, 31-027 Kraków",
+                "CITY": "Kraków",
+                "ZIPCODE": "31-027"
+            },
+            "geometry": {
+                "coordinates": [50.061587190508185, 19.941128235261566]
+            }
+        },
+        {
+            "properties":{
+                "SHOP_ID": 13,
+                "NAME": "Rossmann",
+                "ADDRESS": "Juliana Dunajewskiego 1, 31-133 Kraków",
+                "CITY": "Kraków",
+                "ZIPCODE": "31-133"
+            },
+            "geometry": {
+                "coordinates": [50.06368244922643, 19.933017057411355]
+            }
+        },
+        {
+            "properties":{
+                "SHOP_ID": 14,
+                "NAME": "Rossmann",
+                "ADDRESS": "Karola Szymanowskiego 14",
+                "CITY": "Kraków",
+                "ZIPCODE": "30-047"
+            },
+            "geometry": {
+                "coordinates": [50.06676639522262, 19.92233673687802]
+            }
+        },
+        {
+            "properties":{
+                "SHOP_ID": 15,
+                "NAME": "Rossmann",
+                "ADDRESS": "Dietla 44",
+                "CITY": "Kraków",
+                "ZIPCODE": "31-039"
+            },
+            "geometry": {
+                "coordinates": [50.05227742688007, 19.941697001334216]
+            }
+        },
+        {
+            "properties":{
+                "SHOP_ID": 16,
+                "NAME": "Carrefour",
+                "ADDRESS": "Szewska 5",
+                "CITY": "Kraków",
+                "ZIPCODE": "31-009"
+            },
+            "geometry": {
+                "coordinates": [50.06238106650511, 19.93552883382866]
+            }
+        },
+        {
+            "properties":{
+                "SHOP_ID": 17,
+                "NAME": "Carrefour",
+                "ADDRESS": "Floriańska 29",
+                "CITY": "Kraków",
+                "ZIPCODE": "31-019"
+            },
+            "geometry": {
+                "coordinates": [50.06334556310042, 19.94030920697099]
+            }
+        },
+        {
+            "properties":{
+                "SHOP_ID": 18,
+                "NAME": "Carrefour",
+                "ADDRESS": "Sienna 7",
+                "CITY": "Kraków",
+                "ZIPCODE": "31-041"
+            },
+            "geometry": {
+                "coordinates": [50.06077501829318, 19.939851485563054]
+            }
+        },
+        {
+            "properties":{
+                "SHOP_ID": 19,
+                "NAME": "Carrefour",
+                "ADDRESS": "Henryka Siemiradzkiego 2",
+                "CITY": "Kraków",
+                "ZIPCODE": "31-137"
+            },
+            "geometry": {
+                "coordinates": [50.06904404775445, 19.93282629487239]
+            }
+        },
+        {
+            "properties":{
+                "SHOP_ID": 20,
+                "NAME": "Carrefour",
+                "ADDRESS": "Starowiślna 18",
+                "CITY": "Kraków",
+                "ZIPCODE": "31-032"
+            },
+            "geometry": {
+                "coordinates": [50.05741471077609, 19.9445729587718]
+            }
+        },
+        {
+            "properties":{
+                "SHOP_ID": 21,
+                "NAME": "Lewiatan",
+                "ADDRESS": "Królewska 52",
+                "CITY": "Kraków",
+                "ZIPCODE": "30-045"
+            },
+            "geometry": {
+                "coordinates": [50.07161528765877, 19.919840496010714]
+            }
+        },
+        {
+            "properties":{
+                "SHOP_ID": 22,
+                "NAME": "Lewiatan",
+                "ADDRESS": "Twardowskiego 48",
+                "CITY": "Kraków",
+                "ZIPCODE": "30-312"
+            },
+            "geometry": {
+                "coordinates": [50.04481070416303, 19.925929738615412]
+            }
+        },
+        {
+            "properties":{
+                "SHOP_ID": 23,
+                "NAME": "Lewiatan",
+                "ADDRESS": "Ignacego Krasickiego 30",
+                "CITY": "Kraków",
+                "ZIPCODE": "30-503"
+            },
+            "geometry": {
+                "coordinates": [50.04107928764441, 19.939765088701808]
+            }
+        },
+        {
+            "properties":{
+                "SHOP_ID": 24,
+                "NAME": "Lewiatan",
+                "ADDRESS": "Kobierzyńska 42",
+                "CITY": "Kraków",
+                "ZIPCODE": "30-363"
+            },
+            "geometry": {
+                "coordinates": [50.03072166314552, 19.918585351019928]
+            }
+        },
+        {
+            "properties":{
+                "SHOP_ID": 25,
+                "NAME": "Lewiatan",
+                "ADDRESS": "Wielicka 76",
+                "CITY": "Kraków",
+                "ZIPCODE": "30-552"
+            },
+            "geometry": {
+                "coordinates": [50.03250721108485, 19.97149540613489]
+            }
+        }
+    ]
+}

@@ -1,10 +1,10 @@
 /* eslint-disable no-console */
 import firebase from 'firebase';
 import {
-    USER_STATE_CHANGE,
-    USER_CARDS_STATE_CHANGE,
+    CHANGE_USER_STATE,
+    CHANGE_USER_CARDS_STATE,
     SET_USER_CARD_NUMBER,
-} from '../constants/index';
+} from '../constants';
 
 export function fetchUser() {
     return (dispatch) => {
@@ -16,7 +16,7 @@ export function fetchUser() {
             .then((snapshot) => {
                 if (snapshot.exists) {
                     dispatch({
-                        type: USER_STATE_CHANGE,
+                        type: CHANGE_USER_STATE,
                         currentUser: snapshot.data(),
                     });
                 } else {
@@ -41,7 +41,7 @@ export function fetchUserCards() {
                     const { id } = doc;
                     return { id, ...data };
                 });
-                dispatch({ type: USER_CARDS_STATE_CHANGE, cards });
+                dispatch({ type: CHANGE_USER_CARDS_STATE, cards });
             });
     };
 }

@@ -1,5 +1,5 @@
 /* eslint-disable import/prefer-default-export */
-import { USER_STATE_CHANGE, USER_CARDS_STATE_CHANGE, SET_USER_CARD_NUMBER } from '../constants';
+import { CHANGE_USER_STATE, CHANGE_USER_CARDS_STATE, SET_USER_CARD_NUMBER } from '../constants';
 
 const initialState = {
     currentUser: null,
@@ -9,12 +9,12 @@ const initialState = {
 
 export const user = (state = initialState, action) => {
     switch (action.type) {
-    case USER_STATE_CHANGE:
+    case CHANGE_USER_STATE:
         return {
             ...state,
             currentUser: action.currentUser,
         };
-    case USER_CARDS_STATE_CHANGE:
+    case CHANGE_USER_CARDS_STATE:
         return {
             ...state,
             cards: action.cards,

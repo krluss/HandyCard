@@ -30,11 +30,7 @@ const Login = () => {
                 onPress={signInController}
                 title="Login"
             >
-                <Text
-                    style={{ color: 'white', fontSize: 15, fontWeight: 'bold' }}
-                >
-                    Login
-                </Text>
+                <Text style={styles.text}>Login</Text>
             </TouchableOpacity>
         </View>
     );

@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { Text, View, StyleSheet, Button } from 'react-native';
-import { BarCodeScanner } from 'expo-barcode-scanner';
+import { Text, View, TouchableOpacity } from 'react-native';
+import { Camera } from 'expo-camera';
+
 import { useDispatch } from 'react-redux';
 import { setCardNumber } from '../../../redux/actions';
 import styles from './styles';
+import routeNames from '../../../utils/routeNamesEnum';
 
 const AddCard = ({ navigation }) => {
     const [hasPermission, setHasPermission] = useState(false);
@@ -12,7 +14,7 @@ const AddCard = ({ navigation }) => {
 
     useEffect(() => {
         (async () => {
-            const { status } = await BarCodeScanner.requestPermissionsAsync();
+            const { status } = await Camera.requestPermissionsAsync();
             setHasPermission(status === 'granted');
         })();
     }, []);
@@ -22,23 +24,30 @@ const AddCard = ({ navigation }) => {
         dispatch(setCardNumber(data));
     };
 
-    if (hasPermission === false) {
+    if (!hasPermission) {
         return <Text>No access to camera</Text>;
     }
 
     return (
-        <View style={styles.scannerContainer}>
-            <BarCodeScanner
-                onBarCodeScanned={scanned ? undefined : handleBarCodeScanned}
-                style={StyleSheet.absoluteFillObject}
-            />
-            {scanned && (
-                <Button
-                    title={'Next'}
-                    onPress={() => navigation.navigate('SaveCard')}
+        <View style={styles.container}>
+            <View style={styles.scannerContainer}>
+                <Camera
+                    style={styles.camera}
+                    type={Camera.Constants.Type.back}
+                    onBarCodeScanned={
+                        scanned ? undefined : handleBarCodeScanned
+                    }
+
                 />
-            )}
-            {!scanned && <Text style={styles.text}>Scan your card number</Text>}
+            </View>
+            {scanned ? (
+                <TouchableOpacity
+                    style={styles.btn}
+                    onPress={() => navigation.navigate(routeNames.saveCard)}
+                >
+                    <Text style={styles.btnText}>NEXT</Text>
+                </TouchableOpacity>)
+                : (<Text style={styles.noScanText}>SCAN YOUR CARD</Text>)}
         </View>
     );
 };

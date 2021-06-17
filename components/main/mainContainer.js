@@ -10,8 +10,8 @@ import MainScreen from '../Main';
 import CardDetails from './CardDetails/CardDetails';
 import AddCard from './AddCard/AddCard';
 import SaveCard from './SaveCard/SaveCard';
-import routeNames from '../../routeNamesEnum';
-import styleConst from '../../styleConst';
+import routeNames from '../../utils/routeNamesEnum';
+import styleConst from '../../utils/styleConst';
 
 const store = createStore(rootReducer, applyMiddleware(thunk));
 

@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { View, TextInput, Button } from 'react-native';
+import RNPickerSelect from 'react-native-picker-select';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchUserCards } from '../../../redux/actions';
 import styles from './styles';
 import { saveCardData } from '../../firebaseController';
+import brandNameArray from '../../../utils/brandNameArray';
 
 const SaveCard = (props) => {
     const [brandName, setBrandName] = useState('');
@@ -18,16 +20,15 @@ const SaveCard = (props) => {
 
     return (
         <View>
-            <TextInput
-                style={styles.input}
-                placeholder="Brand"
-                onChangeText={setNameOfBrand}
+            <RNPickerSelect
+                onValueChange={setNameOfBrand}
+                placeholder={{ label: 'Wybierz sklep', value: null }}
+                items={brandNameArray}
             />
             <TextInput
                 style={styles.input}
-                placeholder="Card Number"
                 value={cardNumber}
-                keyboardType="numeric"
+                editable={false}
             />
             <Button title="Save Card" onPress={saveCardHandler} />
         </View>

@@ -2,14 +2,15 @@ import React, { useState } from 'react';
 import { View, TextInput, TouchableOpacity, Text } from 'react-native';
 import styles from './style';
 import { signUp } from '../../firebaseController';
+import styleConst from '../../../utils/styleConst';
 
 const Register = () => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const setNameOfUser = (userName) => setName(userName);
-    const setEmailOfUser = (userEmail) => setEmail(userEmail);
-    const setPasswordOfUser = (userPassword) => setPassword(userPassword);
+    const setUserName = (userName) => setName(userName);
+    const setUserEmail = (userEmail) => setEmail(userEmail);
+    const setUserPassword = (userPassword) => setPassword(userPassword);
 
     const signUpController = () => {
         signUp(email, password, name);
@@ -20,24 +21,24 @@ const Register = () => {
             <TextInput
                 style={styles.input}
                 placeholder="Name"
-                onChangeText={setNameOfUser}
+                onChangeText={setUserName}
             />
             <TextInput
                 style={styles.input}
                 placeholder="Email"
-                onChangeText={setEmailOfUser}
+                onChangeText={setUserEmail}
             />
             <TextInput
                 style={styles.input}
                 placeholder="Password"
                 secureTextEntry={true}
-                onChangeText={setPasswordOfUser}
+                onChangeText={setUserPassword}
             />
             <TouchableOpacity
                 style={styles.button}
                 onPress={signUpController}
                 title="Register"
-                color="#F9AA33"
+                color={styleConst.tintColor}
             >
                 <Text
                     style={{ color: 'white', fontSize: 15, fontWeight: 'bold' }}

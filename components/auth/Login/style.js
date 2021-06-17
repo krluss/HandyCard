@@ -22,6 +22,11 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         marginTop: 20,
     },
+    text: {
+        color: 'white',
+        fontSize: 15,
+        fontWeight: 'bold',
+    },
 });
 
 export default styles;

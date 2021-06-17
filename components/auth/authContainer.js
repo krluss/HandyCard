@@ -5,8 +5,8 @@ import { createStackNavigator } from '@react-navigation/stack';
 import LandingScreen from './Landing/Landing';
 import RegisterScreen from './Register/Register';
 import LoginScreen from './Login/Login';
-import routeNames from '../../routeNamesEnum';
-import styleConst from '../../styleConst';
+import routeNames from '../../utils/routeNamesEnum';
+import styleConst from '../../utils/styleConst';
 
 const Stack = createStackNavigator();
 

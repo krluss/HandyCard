@@ -2,10 +2,11 @@ import React from 'react';
 import { View, Text, Button, Alert } from 'react-native';
 import Barcode from 'react-native-barcode-svg';
 import { useDispatch } from 'react-redux';
+import MapView, { Callout, Marker } from 'react-native-maps';
 import { fetchUserCards } from '../../../redux/actions/index';
 import { deleteCard } from '../../firebaseController';
-
 import styles from './styles';
+import * as shopMarkers from '../../../utils/brandNameMarkers.json';
 
 const CardDetails = (props) => {
     const { brandName, cardNumber, id } = props.route.params;
@@ -33,7 +34,6 @@ const CardDetails = (props) => {
             },
         ]);
     };
-
     return (
         <View style={styles.bg}>
             <Text style={styles.text}>{brandName}</Text>
@@ -42,6 +42,34 @@ const CardDetails = (props) => {
             </View>
             <Text style={styles.text}>{cardNumber}</Text>
             <Button title="Delete Card" onPress={createAlert} />
+            <MapView
+                style={styles.map}
+                initialRegion={{
+                    latitude: 50.06283611555762,
+                    longitude: 19.937580256336474,
+                    latitudeDelta: 0.0922,
+                    longitudeDelta: 0.0421,
+                }}
+            >
+                <Marker
+                    coordinate={{ latitude: 50.06283611555762, longitude: 19.937580256336474 }}
+                    pinColor={'lightblue'}
+                />
+                {shopMarkers.Shops.map((shop) => (
+                    shop.properties.NAME === brandName ? (<Marker
+                        key={shop.properties.SHOP_ID}
+                        coordinate={{
+                            latitude: shop.geometry.coordinates[0],
+                            longitude: shop.geometry.coordinates[1],
+                        }}
+                    >
+                        <Callout>
+                            <Text>{shop.properties.NAME}</Text>
+                            <Text>{shop.properties.ADDRESS}</Text>
+                        </Callout>
+                    </Marker>) : null
+                ))}
+            </MapView>
         </View>
     );
 };
