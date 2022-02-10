@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, TextInput, Button } from 'react-native';
+import { View, TextInput, TouchableOpacity, Text } from 'react-native';
 import RNPickerSelect from 'react-native-picker-select';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchUserCards } from '../../../redux/actions';
@@ -19,18 +19,20 @@ const SaveCard = (props) => {
     };
 
     return (
-        <View>
+        <View style={styles.container}>
             <RNPickerSelect
                 onValueChange={setNameOfBrand}
-                placeholder={{ label: 'Wybierz sklep', value: null }}
                 items={brandNameArray}
+                style={styles.picker}
             />
             <TextInput
                 style={styles.input}
                 value={cardNumber}
                 editable={false}
             />
-            <Button title="Save Card" onPress={saveCardHandler} />
+            <TouchableOpacity onPress={saveCardHandler} style={styles.btn}>
+                <Text style={styles.btnText}>Save Card</Text>
+            </TouchableOpacity>
         </View>
     );
 };

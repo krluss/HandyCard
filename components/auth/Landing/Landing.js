@@ -1,22 +1,22 @@
 import React from 'react';
-import { View, Button } from 'react-native';
+import { View, TouchableOpacity, Text } from 'react-native';
 import styles from './style';
 import routeNames from '../../../utils/routeNamesEnum';
-import styleConst from '../../../utils/styleConst';
 
 const Landing = ({ navigation }) => (
     <View style={styles.bg}>
-        <Button
-            title="Register"
+        <TouchableOpacity
+            style={styles.button}
             onPress={() => navigation.navigate(routeNames.registration)}
-            color={styleConst.tintColor}
-        />
-        <View style={styles.hr}></View>
-        <Button
-            title="Login"
+        >
+            <Text style={styles.text}>Register</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+            style={styles.button}
             onPress={() => navigation.navigate(routeNames.login)}
-            color={styleConst.tintColor}
-        />
+        >
+            <Text style={styles.text}>Login</Text>
+        </TouchableOpacity>
     </View>
 );
 

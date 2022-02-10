@@ -19,21 +19,21 @@ const styles = StyleSheet.create({
         backgroundColor: '#F9AA33',
         width: 288,
         height: 40,
-        padding: 40,
         alignItems: 'center',
-        marginBottom: 80,
+        marginBottom: 180,
         justifyContent: 'center',
+        borderRadius: 6,
     },
     btnText: {
         color: 'white',
-        fontSize: 15,
+        fontSize: 20,
         fontWeight: 'bold',
     },
     noScanText: {
         color: 'white',
-        fontSize: 45,
+        fontSize: 42,
         fontWeight: 'bold',
-        marginBottom: 80,
+        marginBottom: 180,
     },
 });
 

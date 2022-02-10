@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Button, FlatList, TouchableOpacity } from 'react-native';
+import { View, Text, FlatList, TouchableOpacity } from 'react-native';
 import { useSelector } from 'react-redux';
 
 import Card from '../Card/Card';
@@ -23,10 +23,12 @@ const Cards = (props) => {
                     </TouchableOpacity>
                 )}
             />
-            <Button
-                title="Add card"
+            <TouchableOpacity
                 onPress={() => props.navigation.navigate(routeNames.addCard)}
-            />
+                style={styles.button}
+            >
+                <Text style={styles.text}>Add card</Text>
+            </TouchableOpacity>
         </View>
     );
 };

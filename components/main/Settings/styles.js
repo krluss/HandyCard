@@ -5,13 +5,21 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: '#344955',
         color: '#F9AA33',
+        alignItems: 'center',
+        justifyContent: 'flex-end',
     },
     text: {
-        color: '#F9AA33',
+        color: '#344955',
+        fontSize: 15,
+        fontWeight: 'bold',
     },
     button: {
-        flex: 2,
-        justifyContent: 'flex-end',
+        backgroundColor: '#F9AA33',
+        width: 288,
+        height: 40,
+        padding: 10,
+        alignItems: 'center',
+        marginTop: 20,
     },
 });
 

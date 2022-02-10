@@ -1,14 +1,17 @@
 import React from 'react';
-import { View, Text, Button } from 'react-native';
+import { View, TouchableOpacity, Text } from 'react-native';
 import styles from './styles';
 import { onLogout } from '../../firebaseController';
-import styleConst from '../../../utils/styleConst';
 
 const Settings = () => (
     <View style={styles.bg}>
-        <Text style={styles.text}> Ustawienia </Text>
-        <View style={styles.button}>
-            <Button title="Logout" onPress={onLogout} color={styleConst.tintColor} />
+        <View >
+            <TouchableOpacity
+                style={styles.button}
+                onPress={onLogout}
+            >
+                <Text style={styles.text}>Logout</Text>
+            </TouchableOpacity>
         </View>
     </View>
 );
