@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import { View, TextInput, TouchableOpacity, Text } from 'react-native';
 import RNPickerSelect from 'react-native-picker-select';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchUserCards } from '../../../redux/actions';
-import styles from './styles';
+import { fetchUserCards, setCardNumber } from '../../../redux/actions';
 import { saveCardData } from '../../firebaseController';
 import brandNameArray from '../../../utils/brandNameArray';
+import styles from './styles';
 
 const SaveCard = (props) => {
     const [brandName, setBrandName] = useState('');
@@ -18,21 +18,35 @@ const SaveCard = (props) => {
         dispatch(fetchUserCards());
     };
 
+    const placeHolder = {
+        label: 'Select Shop',
+        value: '',
+    };
+
     return (
         <View style={styles.container}>
             <RNPickerSelect
-                onValueChange={setNameOfBrand}
+                placeholder={placeHolder}
+                placeholderTextColor={'#c6c6d0'}
                 items={brandNameArray}
-                style={styles.picker}
+                onValueChange={setNameOfBrand}
+                style={styles}
             />
             <TextInput
                 style={styles.input}
                 value={cardNumber}
-                editable={false}
+                onChangeText={ (val) => dispatch(setCardNumber(val))}
+                keyboardType={'number-pad'}
+                placeholder={'Card number'}
+                placeholderTextColor={'#c6c6d0'}
             />
-            <TouchableOpacity onPress={saveCardHandler} style={styles.btn}>
-                <Text style={styles.btnText}>Save Card</Text>
-            </TouchableOpacity>
+            {brandName !== '' && cardNumber.length === 13
+                ? (
+                    <TouchableOpacity onPress={saveCardHandler} style={styles.btn}>
+                        <Text style={styles.btnText}>Save Card</Text>
+                    </TouchableOpacity>
+                )
+                : (<Text></Text>) }
         </View>
     );
 };

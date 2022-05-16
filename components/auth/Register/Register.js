@@ -41,7 +41,7 @@ const Register = () => {
                 color={styleConst.tintColor}
             >
                 <Text
-                    style={{ color: 'white', fontSize: 15, fontWeight: 'bold' }}
+                    style={styles.text}
                 >
                     Register
                 </Text>

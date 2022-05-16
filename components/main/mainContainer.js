@@ -26,33 +26,25 @@ const mainCointainer = () => (
                     component={MainScreen}
                     options={{
                         headerTintColor: styleConst.tintColor,
-                        headerStyle: { backgroundColor: styleConst.bgColor },
-                    }}
-                />
+                        headerStyle: { backgroundColor: styleConst.bgColor } }}/>
                 <Stack.Screen
                     name={routeNames.cardDetails}
                     component={CardDetails}
                     options={{
                         headerTintColor: styleConst.tintColor,
-                        headerStyle: { backgroundColor: styleConst.bgColor },
-                    }}
-                />
+                        headerStyle: { backgroundColor: styleConst.bgColor } }}/>
                 <Stack.Screen
                     name={routeNames.addCard}
                     component={AddCard}
                     options={{
                         headerTintColor: styleConst.tintColor,
-                        headerStyle: { backgroundColor: styleConst.bgColor },
-                    }}
-                />
+                        headerStyle: { backgroundColor: styleConst.bgColor } }}/>
                 <Stack.Screen
                     name={routeNames.saveCard}
                     component={SaveCard}
                     options={{
                         headerTintColor: styleConst.tintColor,
-                        headerStyle: { backgroundColor: styleConst.bgColor },
-                    }}
-                />
+                        headerStyle: { backgroundColor: styleConst.bgColor } }}/>
             </Stack.Navigator>
         </NavigationContainer>
     </Provider>

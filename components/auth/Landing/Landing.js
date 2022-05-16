@@ -5,6 +5,7 @@ import routeNames from '../../../utils/routeNamesEnum';
 
 const Landing = ({ navigation }) => (
     <View style={styles.bg}>
+        <Text style={styles.welcomeText}>Welcome to HandyCard</Text>
         <TouchableOpacity
             style={styles.button}
             onPress={() => navigation.navigate(routeNames.registration)}

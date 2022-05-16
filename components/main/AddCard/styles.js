@@ -1,4 +1,6 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Dimensions } from 'react-native';
+
+const windowWidth = Dimensions.get('window').width;
 
 const styles = StyleSheet.create({
     container: {
@@ -17,23 +19,31 @@ const styles = StyleSheet.create({
     },
     btn: {
         backgroundColor: '#F9AA33',
-        width: 288,
+        width: windowWidth - 25,
         height: 40,
+        justifyContent: 'center',
         alignItems: 'center',
         marginBottom: 180,
-        justifyContent: 'center',
         borderRadius: 6,
     },
     btnText: {
-        color: 'white',
+        color: '#344955',
         fontSize: 20,
         fontWeight: 'bold',
     },
     noScanText: {
-        color: 'white',
-        fontSize: 42,
+        color: '#F9AA33',
+        fontSize: 36,
         fontWeight: 'bold',
-        marginBottom: 180,
+        textAlign: 'center',
+        marginBottom: 50,
+    },
+    noPermissionText: {
+        color: 'red',
+        fontSize: 36,
+        textAlign: 'center',
+        fontWeight: 'bold',
+        marginTop: 250,
     },
 });
 

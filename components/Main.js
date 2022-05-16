@@ -26,8 +26,7 @@ const Main = () => {
                 activeTintColor: '#F9AA33',
                 activeBackgroundColor: '#232F34',
                 inactiveBackgroundColor: '#232F34',
-            }}
-        >
+            }}>
             <Tab.Screen
                 name="Cards"
                 component={CardsScreen}
@@ -37,11 +36,7 @@ const Main = () => {
                         <MaterialCommunityIcons
                             name="credit-card"
                             color={color}
-                            size={size}
-                        />
-                    ),
-                }}
-            />
+                            size={size}/>) }}/>
             <Tab.Screen
                 name="Settings"
                 component={SettingsScreen}
@@ -51,11 +46,7 @@ const Main = () => {
                         <MaterialCommunityIcons
                             name="cog-outline"
                             color={color}
-                            size={size}
-                        />
-                    ),
-                }}
-            />
+                            size={size}/>) }}/>
         </Tab.Navigator>
     );
 };

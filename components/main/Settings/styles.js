@@ -1,4 +1,6 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Dimensions } from 'react-native';
+
+const windowWidth = Dimensions.get('window').width;
 
 const styles = StyleSheet.create({
     bg: {
@@ -10,16 +12,17 @@ const styles = StyleSheet.create({
     },
     text: {
         color: '#344955',
-        fontSize: 15,
+        fontSize: 20,
         fontWeight: 'bold',
     },
     button: {
         backgroundColor: '#F9AA33',
-        width: 288,
+        width: windowWidth - 50,
         height: 40,
-        padding: 10,
+        justifyContent: 'center',
         alignItems: 'center',
-        marginTop: 20,
+        marginBottom: 5,
+        borderRadius: 6,
     },
 });
 

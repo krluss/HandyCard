@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Button, Alert } from 'react-native';
+import { View, Text, Alert, TouchableOpacity } from 'react-native';
 import Barcode from 'react-native-barcode-svg';
 import { useDispatch } from 'react-redux';
 import MapView, { Callout, Marker } from 'react-native-maps';
@@ -15,16 +15,14 @@ const CardDetails = (props) => {
 
     const delteCardHandler = () => {
         deleteCard(id);
-        props.navigation.popToTop();
         dispatch(fetchUserCards());
+        props.navigation.popToTop();
     };
 
     const createAlert = () => {
         Alert.alert('', 'Are you sure you want to remove this card?', [
             {
                 text: 'Cancel',
-                onPress: () => '',
-                style: 'cancel',
             },
             {
                 text: 'Yes',
@@ -41,7 +39,12 @@ const CardDetails = (props) => {
                 <Barcode value={cardNumber} />
             </View>
             <Text style={styles.text}>{cardNumber}</Text>
-            <Button title="Delete Card" onPress={createAlert} />
+            <TouchableOpacity
+                onPress={createAlert}
+                style={styles.button}
+            >
+                <Text style={styles.btnText}>Delete Card</Text>
+            </TouchableOpacity>
             <MapView
                 style={styles.map}
                 initialRegion={{

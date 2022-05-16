@@ -1,4 +1,6 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Dimensions } from 'react-native';
+
+const windowWidth = Dimensions.get('window').width;
 
 const styles = StyleSheet.create({
     bg: {
@@ -6,23 +8,31 @@ const styles = StyleSheet.create({
         backgroundColor: '#344955',
         color: '#F9AA33',
         alignItems: 'center',
+        justifyContent: 'space-between',
     },
     item: {
-        padding: 25,
-        backgroundColor: 'red',
-        alignItems: 'center',
+        fontSize: 32,
+    },
+    noCardText: {
+        color: '#F9AA33',
+        fontSize: 30,
+        fontWeight: 'bold',
+        width: windowWidth - 50,
+        textAlign: 'center',
+        marginTop: 50,
     },
     button: {
         backgroundColor: '#F9AA33',
-        width: 288,
+        width: windowWidth - 50,
         height: 40,
-        padding: 10,
+        justifyContent: 'center',
         alignItems: 'center',
         marginBottom: 5,
+        borderRadius: 6,
     },
     text: {
         color: '#344955',
-        fontSize: 15,
+        fontSize: 20,
         fontWeight: 'bold',
     },
 });
